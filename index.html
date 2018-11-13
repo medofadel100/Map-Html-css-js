@@ -56,8 +56,8 @@
 
     <script type="text/javascript" charset="UTF-8" >
     var x = document.getElementById("demo");
-    var lat  = document.getElementById("demo1")
-    var lon  = document.getElementById("demo2")
+    var lat  = document.getElementById("demo1");
+    var lon  = document.getElementById("demo2");
 
     
 
@@ -72,18 +72,15 @@
         }
     navigator.geolocation.getCurrentPosition(showPosition);
     
-    function getLocation() {
+    function getLocation(position) {
 
     lat.innerHTML = "L" + position.coords.latitude  ;
     lon.innerHTML = "LL" + position.coords.longitude ;
 
 
-   
-
-
 
     }
- 
+ navigator.geolocation.getCurrentPosition(getLocation);
   
 
 
