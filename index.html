@@ -56,11 +56,7 @@
 
     <script type="text/javascript" charset="UTF-8" >
     var x = document.getElementById("demo");
-    var lat  = document.getElementById("demo1")
-    var lon  = document.getElementById("demo2")
-
-    
-
+   
     function testDelegation(map) {
 
   
@@ -72,19 +68,25 @@
         }
     navigator.geolocation.getCurrentPosition(showPosition);
     
-    function getLocation() {
+    var lat;
+    var lon;
 
-    lat.innerHTML = "L" + position.coords.latitude  ;
-    lon.innerHTML = "LL" + position.coords.longitude ;
+    function getLocation(position) {
+    
+    //New Sec
+    document.getElementById("demo1").innerHTML = position.coords.latitude  ;
+    document.getElementById("demo2").innerHTML = position.coords.longitude ;
+
+  
+    // End Sec
 
 
-   
-
-
+    var lat =  position.coords.latitude  ;
+    var lon =  position.coords.longitude ;
 
     }
  
-  
+  navigator.geolocation.getCurrentPosition(getLocation);
 
 
 
